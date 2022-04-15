@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Global, css } from "@emotion/react";
+import MainPage from "./Pages/MainPage";
+import PlayPage from "./Pages/PlayPage";
+import InfoPage from "./Pages/InfoPage";
+import Footer from "./Components/Footer/Footer";
 
-function App() {
+const App = () => {
+  const [page, setPage] = useState("main");
+
+  const pages = {
+    main: <MainPage setPage={setPage} />,
+    play: <PlayPage setPage={setPage} />,
+    info: <InfoPage setPage={setPage} />,
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Global
+        styles={css`
+          *,
+          *::before,
+          *::after {
+            margin: 0;
+            box-sizing: border-box;
+          }
+          body {
+            font-family: "Dongle", sans-serif;
+            font-size: 1.5rem;
+            color: #fff;
+            background: #212121;
+            overflow: hidden;
+          }
+        `}
+      />
+      {pages[page]}
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;
