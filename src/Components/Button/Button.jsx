@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import Icon from "../Icon/Icon";
 import Text from "../Text/Text";
 
-const StylesWrapeer = styled.div`
+const StylesWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,7 +11,7 @@ const StylesWrapeer = styled.div`
   color: #fff;
   border: 2px solid #fff;
   border-radius: 8px;
-  padding: 5px 10px;
+  padding: 0 10px;
   transition: background-color 200ms, color 200ms;
   cursor: pointer;
   &:hover {
@@ -22,10 +22,10 @@ const StylesWrapeer = styled.div`
 
 const Button = ({ text, icon, onClick }) => {
   return (
-    <StylesWrapeer onClick={onClick}>
-      <Icon icon={icon} />
+    <StylesWrapper onClick={onClick}>
+      <Icon icon={icon} size={1.3} />
       <Text text={text} />
-    </StylesWrapeer>
+    </StylesWrapper>
   );
 };
 

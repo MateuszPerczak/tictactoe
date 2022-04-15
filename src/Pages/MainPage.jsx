@@ -20,21 +20,25 @@ const MainPage = ({ setPage }) => {
         <Header header="TicTacToe" />
       </Animate>
       <ButtonsWrapper>
-        <Animate delay={0.7} duration={0.5} type="slide">
+        <Animate
+          delay={0.5}
+          duration={0.2}
+          type="scale"
+          animateGroup
+          step={0.1}
+        >
           <Button
-            icon="&#xF5B0;"
+            icon="&#xE102;"
             text="PLAY"
             onClick={() => {
               setPage("play");
             }}
           />
-        </Animate>
-        <Animate delay={1} duration={0.5} type="slide">
           <Button
-            icon="&#xF167;"
-            text="INFO"
+            icon="&#xE946;"
+            text="ABOUT"
             onClick={() => {
-              setPage("info");
+              setPage("about");
             }}
           />
         </Animate>

@@ -5,10 +5,17 @@ const StylesWrapper = styled.span`
   font-weight: ${({ bold }) => {
     return bold ? "bold" : "normal";
   }};
+  font-size: ${({ size }) => {
+    return size;
+  }}rem;
 `;
 
-const Icon = ({ icon, bold }) => {
-  return <StylesWrapper bold={bold}>{icon}</StylesWrapper>;
+const Icon = ({ icon, bold, size = 1 }) => {
+  return (
+    <StylesWrapper bold={bold} size={size}>
+      {icon}
+    </StylesWrapper>
+  );
 };
 
 export default Icon;

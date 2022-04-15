@@ -17,7 +17,13 @@ const Bord = () => {
   const [board, setBoard] = useState([]);
   const [player, setPlayer] = useState("X");
 
-  return <StylesWrapper></StylesWrapper>;
+  return (
+    <>
+      <StylesWrapper>
+        <span>{player}</span>
+      </StylesWrapper>
+    </>
+  );
 };
 
 export default Bord;

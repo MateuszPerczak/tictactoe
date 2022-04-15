@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Global, css } from "@emotion/react";
 import MainPage from "./Pages/MainPage";
 import PlayPage from "./Pages/PlayPage";
-import InfoPage from "./Pages/InfoPage";
-import Footer from "./Components/Footer/Footer";
+import InfoPage from "./Pages/AboutPage";
 
 const App = () => {
   const [page, setPage] = useState("main");
@@ -11,7 +10,7 @@ const App = () => {
   const pages = {
     main: <MainPage setPage={setPage} />,
     play: <PlayPage setPage={setPage} />,
-    info: <InfoPage setPage={setPage} />,
+    about: <InfoPage setPage={setPage} />,
   };
 
   return (
@@ -34,7 +33,6 @@ const App = () => {
         `}
       />
       {pages[page]}
-      <Footer />
     </>
   );
 };

@@ -4,6 +4,7 @@ const StylesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   animation: ${({ type }) => {
       return type;
@@ -36,12 +37,15 @@ const StylesWrapper = styled.div`
     }
   }
 
-  @keyframes rotate {
+  @keyframes hover {
     0% {
-      transform: rotate(0deg);
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(10%);
     }
     100% {
-      transform: rotate(360deg);
+      transform: translateY(0%);
     }
   }
 
@@ -62,14 +66,30 @@ const Animate = ({
   type,
   animate = true,
   infinite = false,
+  animateGroup = false,
+  step = 0.5,
 }) => {
-  return (
+  return children.length && animateGroup ? (
+    children.map((child, index) => {
+      return (
+        <Animate
+          delay={delay + step * (index + 1)}
+          duration={duration}
+          type={type}
+          key={index}
+        >
+          {child}
+        </Animate>
+      );
+    })
+  ) : (
     <StylesWrapper
       delay={delay}
       duration={duration}
       type={type}
       animate={animate}
       infinite={infinite}
+      animateGroup={animateGroup}
     >
       {children}
     </StylesWrapper>
