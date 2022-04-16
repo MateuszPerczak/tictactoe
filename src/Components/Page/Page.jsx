@@ -9,6 +9,7 @@ const StylesWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: url("/images/bg.webp");
+  overflow: hidden;
 `;
 
 const Page = ({ children }) => {

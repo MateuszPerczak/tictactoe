@@ -15,18 +15,12 @@ const ButtonsWrapper = styled.div`
 const MainPage = ({ setPage }) => {
   return (
     <Page>
-      <Animate delay={0.5} duration={0.3} type="scale">
+      <Animate delay={0.5} duration={0.3} type="puff">
         <Logo />
         <Header header="TicTacToe" />
       </Animate>
       <ButtonsWrapper>
-        <Animate
-          delay={0.5}
-          duration={0.2}
-          type="scale"
-          animateGroup
-          step={0.1}
-        >
+        <Animate delay={0.5} duration={0.2} type="puff" animateGroup step={0.1}>
           <Button
             icon="&#xE102;"
             text="PLAY"

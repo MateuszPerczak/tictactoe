@@ -10,7 +10,7 @@ import Link from "../Components/Link/Link";
 const InfoPage = ({ setPage }) => {
   return (
     <Page>
-      <Animate duration={0.9} type="slide" animateGroup step={0.1}>
+      <Animate duration={0.5} type="slide" animateGroup step={0.1}>
         <Animate delay={1.9} duration={5} type="hover" infinite>
           <Icon icon="&#xE946;" size={4} />
         </Animate>
@@ -19,8 +19,8 @@ const InfoPage = ({ setPage }) => {
         <TextSeperator />
         <Header header="TicTacToe" description="By: Mateusz Perczak" />
         <TextSeperator space={2} />
-        <Header header="Used frameworks:" size={2} />
-        <Text text="React, Emotion" />
+        <Header header="Used libraries:" size={2} />
+        <Text text="React, Emotion, Lodash" />
         <TextSeperator />
         <Header header="Used icons:" size={2} />
         <Text text="Microsoft Fluent UI Icons" />

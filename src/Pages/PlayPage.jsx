@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Page from "../Components/Page/Page";
 import Animate from "../Components/Animate/Animate";
-import Board from "../Components/Board/Board";
+import Game from "../Components/Game/Game";
 import Button from "../Components/Button/Button";
 import Logo from "../Components/Logo/Logo";
 import Header from "../Components/Header/Header";
@@ -15,19 +15,23 @@ const ButtonsWrapper = styled.div`
 `;
 
 const PlayPage = ({ setPage }) => {
+  const [restart, setRestart] = useState(false);
+
   return (
     <Page>
-      <Animate duration={0.3} type="slide" animateGroup step={0.2}>
+      <Animate duration={0.3} type="slide" animateGroup step={0.1} flex>
         <Logo />
-        <Header header="TicTacToe" description="Never gona give u up" />
+        <Header header="TicTacToe" />
         <TextSeperator space={2} />
-        <Board />
+        <Game restart={restart} />
         <TextSeperator space={2} />
-      </Animate>
-      <Animate delay={1} duration={0.3} type="slide">
         <ButtonsWrapper>
           <Button icon="&#xE76B;" text="Back" onClick={() => setPage("main")} />
-          <Button icon="&#xE149;" text="Restart" />
+          <Button
+            icon="&#xE149;"
+            text="Restart"
+            onClick={() => setRestart(!restart)}
+          />
         </ButtonsWrapper>
       </Animate>
     </Page>

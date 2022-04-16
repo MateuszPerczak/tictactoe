@@ -30,6 +30,10 @@ const App = () => {
             background: #212121;
             overflow: hidden;
           }
+          @font-face {
+            font-family: "Segoe Fluent Icons";
+            src: url("./fonts/Segoe Fluent Icons.ttf") format("truetype");
+          }
         `}
       />
       {pages[page]}
