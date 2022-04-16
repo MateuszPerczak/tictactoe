@@ -8,7 +8,7 @@ const StylesWrapper = styled.div`
   user-select: none;
   width: 100vw;
   height: 100vh;
-  background-image: url("/images/bg.webp");
+  background-image: url("./images/bg.webp");
   overflow: hidden;
 `;
 

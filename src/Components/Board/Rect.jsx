@@ -11,7 +11,6 @@ const StyledRect = styled.div`
   border-radius: 8px;
   transition: background 200ms, width 50ms, height 50ms;
   cursor: pointer;
-
   &:hover {
     background: #00000033;
   }

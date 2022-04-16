@@ -4,6 +4,7 @@ import Animate from "../Components/Animate/Animate";
 import Header from "../Components/Header/Header";
 import Logo from "../Components/Logo/Logo";
 import Button from "../Components/Button/Button";
+import TextSeperator from "../Components/Text/TextSeperator";
 
 const ButtonsWrapper = styled.div`
   display: flex;
@@ -17,7 +18,8 @@ const MainPage = ({ setPage }) => {
     <Page>
       <Animate delay={0.5} duration={0.3} type="puff">
         <Logo />
-        <Header header="TicTacToe" />
+        <Header header="TicTacToe" description="By: Mateusz Perczak" />
+        <TextSeperator />
       </Animate>
       <ButtonsWrapper>
         <Animate delay={0.5} duration={0.2} type="puff" animateGroup step={0.1}>
