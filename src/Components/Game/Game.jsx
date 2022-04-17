@@ -33,7 +33,9 @@ const Game = ({ restart }) => {
 
   useEffect(() => {
     if (moves === 9) {
-      showWinner("", setWinner, setBoard);
+      setTimeout(() => {
+        showWinner("", setWinner, setBoard);
+      }, 100);
     }
   }, [moves]);
 
@@ -41,7 +43,9 @@ const Game = ({ restart }) => {
     if (board) {
       let result = checkWinner(board);
       if (result !== "") {
-        showWinner(result, setWinner, setBoard);
+        setTimeout(() => {
+          showWinner(result, setWinner, setBoard);
+        }, 100);
       }
     }
   }, [board]);

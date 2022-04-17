@@ -11,7 +11,7 @@ const InfoPage = ({ setPage }) => {
   return (
     <Page>
       <Animate duration={0.5} type="slide" animateGroup step={0.1}>
-        <Animate delay={1.9} duration={5} type="hover" infinite>
+        <Animate delay={1.9} duration={5} type="hover" infinit>
           <Icon icon="&#xE946;" size={4} />
         </Animate>
         <TextSeperator space={0.5} />

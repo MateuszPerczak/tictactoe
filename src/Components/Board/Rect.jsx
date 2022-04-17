@@ -8,7 +8,7 @@ const StyledRect = styled.div`
   align-items: center;
   width: 33%;
   height: 33%;
-  border-radius: 8px;
+  border-radius: 16px;
   transition: background 200ms, width 50ms, height 50ms;
   cursor: pointer;
   &:hover {

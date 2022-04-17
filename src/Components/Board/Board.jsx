@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 import Rect from "./Rect";
 import Winner from "./Winner";
 
-const StylesWrapper = styled.div`
+const StyledBoard = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   @media (max-width: 500px) {
     width: 370px;
@@ -19,14 +19,14 @@ const StylesWrapper = styled.div`
   width: 400px;
   height: 400px;
   border: 2px solid #fff;
-  border-radius: 8px;
+  border-radius: 16px;
   transition: width 0.3s, height 0.3s;
   backdrop-filter: blur(5px);
 `;
 
 const Board = ({ board, winner, onClick }) => {
   return (
-    <StylesWrapper>
+    <StyledBoard>
       {board ? (
         board.map((player, index) => {
           return (
@@ -42,7 +42,7 @@ const Board = ({ board, winner, onClick }) => {
       ) : (
         <Winner winner={winner} />
       )}
-    </StylesWrapper>
+    </StyledBoard>
   );
 };
 

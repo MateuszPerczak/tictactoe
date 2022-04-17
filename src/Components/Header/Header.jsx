@@ -14,7 +14,7 @@ const StylesWrapper = styled.div`
 
 const DecsWrapper = styled.span`
   font-size: ${({ size }) => {
-    return size / 3;
+    return Math.ceil(size / 3);
   }}rem;
 `;
 

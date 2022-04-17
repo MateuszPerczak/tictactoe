@@ -9,9 +9,17 @@ const StylesWrapper = styled.a`
   color: #fff;
   padding: 0 10px;
   text-decoration: none;
-  transition: border 200ms;
   cursor: pointer;
-  width: 100%;
+  width: 9rem;
+  margin: 5px;
+  border: 2px dotted #fff;
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  transition: background-color 200ms, color 200ms;
+  &:hover {
+    background: #fff;
+    color: #212121;
+  }
 `;
 
 const Link = ({ icon, text, href, rel = "noopener noreferrer" }) => {

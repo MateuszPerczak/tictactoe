@@ -11,30 +11,45 @@ const ButtonsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  min-width: 25vw;
 `;
 
 const MainPage = ({ setPage }) => {
   return (
     <Page>
-      <Animate delay={0.5} duration={0.3} type="puff">
+      <Animate duration={0.3} type="slide">
         <Logo />
         <Header header="TicTacToe" description="By: Mateusz Perczak" />
         <TextSeperator />
       </Animate>
       <ButtonsWrapper>
-        <Animate delay={0.5} duration={0.2} type="puff" animateGroup step={0.1}>
+        <Animate
+          delay={0.1}
+          duration={0.4}
+          type="slide"
+          animateGroup
+          step={0.1}
+          flex
+        >
           <Button
             icon="&#xE102;"
-            text="PLAY"
+            text="Play"
             onClick={() => {
               setPage("play");
             }}
           />
           <Button
             icon="&#xE946;"
-            text="ABOUT"
+            text="About"
             onClick={() => {
               setPage("about");
+            }}
+          />
+          <Button
+            icon="&#xEBE8;"
+            text="Dev"
+            onClick={() => {
+              setPage("test");
             }}
           />
         </Animate>

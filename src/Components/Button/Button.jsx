@@ -7,10 +7,11 @@ const StylesWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  width: 7rem;
   backdrop-filter: blur(5px);
   color: #fff;
   border: 2px solid #fff;
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 0 10px;
   transition: background-color 200ms, color 200ms;
   cursor: pointer;
