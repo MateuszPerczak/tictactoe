@@ -1,0 +1,2 @@
+.animate{will-change:transform}@-webkit-keyframes scale{0%{-webkit-transform:scale(0);transform:scale(0)}70%{-webkit-transform:scale(1.3);transform:scale(1.3)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes scale{0%{-webkit-transform:scale(0);transform:scale(0)}70%{-webkit-transform:scale(1.3);transform:scale(1.3)}to{-webkit-transform:scale(1);transform:scale(1)}}
+/*# sourceMappingURL=243.6712c7aa.chunk.css.map*/
