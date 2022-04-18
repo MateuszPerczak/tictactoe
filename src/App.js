@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Global, css } from "@emotion/react";
 import MainPage from "./Pages/MainPage";
 import PlayPage from "./Pages/PlayPage";
 import InfoPage from "./Pages/AboutPage";
-import TestPage from "./Pages/TestPage";
 
 const App = () => {
   const [page, setPage] = useState("main");
 
-  const pages = {
-    main: <MainPage setPage={setPage} />,
-    play: <PlayPage setPage={setPage} />,
-    about: <InfoPage setPage={setPage} />,
-    test: <TestPage setPage={setPage} />,
-  };
+  const pages = useMemo(() => {
+    return {
+      main: <MainPage setPage={setPage} />,
+      play: <PlayPage setPage={setPage} />,
+      about: <InfoPage setPage={setPage} />,
+    };
+  }, []);
 
   return (
     <>
@@ -31,8 +31,6 @@ const App = () => {
             color: #fff;
             background: #212121;
             overflow: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
           }
           @font-face {
             font-family: "Segoe Fluent Icons";

@@ -45,13 +45,6 @@ const MainPage = ({ setPage }) => {
               setPage("about");
             }}
           />
-          <Button
-            icon="&#xEBE8;"
-            text="Dev"
-            onClick={() => {
-              setPage("test");
-            }}
-          />
         </Animate>
       </ButtonsWrapper>
     </Page>
