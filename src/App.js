@@ -38,10 +38,10 @@ const App = () => {
       />
       <Suspense fallback={<></>}>
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/tictactoe" element={<MainPage />} />
           <Route path="/play" element={<PlayPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Navigate to="/tictactoe" />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
