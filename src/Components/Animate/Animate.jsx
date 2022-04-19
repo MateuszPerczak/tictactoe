@@ -36,7 +36,6 @@ const Animate = ({
   step = 0.5,
 }) => {
   // import proper animation
-
   import(`./animations/${type}.scss`);
 
   return children?.length && animateGroup ? (

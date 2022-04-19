@@ -14,7 +14,7 @@ const ButtonsWrapper = styled.div`
   min-width: 25vw;
 `;
 
-const MainPage = ({ setPage }) => {
+const MainPage = () => {
   return (
     <Page>
       <Animate duration={0.3} type="slide">
@@ -29,22 +29,9 @@ const MainPage = ({ setPage }) => {
           type="slide"
           animateGroup
           step={0.1}
-          flex
         >
-          <Button
-            icon="&#xE102;"
-            text="Play"
-            onClick={() => {
-              setPage("play");
-            }}
-          />
-          <Button
-            icon="&#xE946;"
-            text="About"
-            onClick={() => {
-              setPage("about");
-            }}
-          />
+          <Button icon="&#xE102;" text="Play" to="/play" />
+          <Button icon="&#xE946;" text="About" to="/about" />
         </Animate>
       </ButtonsWrapper>
     </Page>

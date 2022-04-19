@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import Page from "../Components/Page/Page";
 import Animate from "../Components/Animate/Animate";
 import Game from "../Components/Game/Game";
@@ -15,9 +15,9 @@ const ButtonsWrapper = styled.div`
   align-items: center;
 `;
 
-const PlayPage = ({ setPage }) => {
-  const [restart, setRestart] = useState(false);
+const PlayPage = () => {
   const quote = useMemo(() => getQuote(), []);
+  const [restart, setRestart] = useState(false);
 
   return (
     <Page>
@@ -28,7 +28,7 @@ const PlayPage = ({ setPage }) => {
         <Game restart={restart} />
         <TextSeperator space={2} />
         <ButtonsWrapper>
-          <Button icon="&#xE76B;" text="Back" onClick={() => setPage("main")} />
+          <Button icon="&#xE76B;" text="Back" to="/" />
           <Button
             icon="&#xE149;"
             text="Restart"

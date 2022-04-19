@@ -7,11 +7,11 @@ import Icon from "../Components/Icon/Icon";
 import Button from "../Components/Button/Button";
 import Link from "../Components/Link/Link";
 
-const InfoPage = ({ setPage }) => {
+const InfoPage = () => {
   return (
     <Page>
       <Animate duration={0.5} type="slide" animateGroup step={0.1}>
-        <Animate delay={1.9} duration={5} type="hover" infinit>
+        <Animate delay={1.9} duration={5} type="hover" infinite>
           <Icon icon="&#xE946;" size={4} />
         </Animate>
         <TextSeperator space={0.5} />
@@ -20,7 +20,7 @@ const InfoPage = ({ setPage }) => {
         <Header header="TicTacToe" description="By: Mateusz Perczak" />
         <TextSeperator space={2} />
         <Header header="Used libraries:" size={2} />
-        <Text text="React, Emotion, Lodash" />
+        <Text text="React, react-router-dom, Emotion, Lodash" />
         <TextSeperator />
         <Header header="Used icons:" size={2} />
         <Text text="Microsoft Fluent UI Icons" />
@@ -44,7 +44,7 @@ const InfoPage = ({ setPage }) => {
         <TextSeperator space={2} />
       </Animate>
       <Animate delay={2.4} duration={0.2} type="scale">
-        <Button icon="&#xE76B;" text="Back" onClick={() => setPage("main")} />
+        <Button icon="&#xE76B;" text="Back" to="/" />
       </Animate>
     </Page>
   );

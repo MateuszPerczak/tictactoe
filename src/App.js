@@ -1,22 +1,20 @@
-import { useState, useMemo } from "react";
+import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import { Global, css } from "@emotion/react";
-import MainPage from "./Pages/MainPage";
-import PlayPage from "./Pages/PlayPage";
-import InfoPage from "./Pages/AboutPage";
+
+const MainPage = lazy(() => {
+  return import("./Pages/MainPage");
+});
+const PlayPage = lazy(() => {
+  return import("./Pages/PlayPage");
+});
+const AboutPage = lazy(() => {
+  return import("./Pages/AboutPage");
+});
 
 const App = () => {
-  const [page, setPage] = useState("main");
-
-  const pages = useMemo(() => {
-    return {
-      main: <MainPage setPage={setPage} />,
-      play: <PlayPage setPage={setPage} />,
-      about: <InfoPage setPage={setPage} />,
-    };
-  }, []);
-
   return (
-    <>
+    <BrowserRouter>
       <Global
         styles={css`
           *,
@@ -38,8 +36,15 @@ const App = () => {
           }
         `}
       />
-      {pages[page]}
-    </>
+      <Suspense fallback={<></>}>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/play" element={<PlayPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 };
 
