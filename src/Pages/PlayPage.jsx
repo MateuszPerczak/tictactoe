@@ -28,7 +28,7 @@ const PlayPage = () => {
         <Game restart={restart} />
         <TextSeperator space={2} />
         <ButtonsWrapper>
-          <Button icon="&#xE76B;" text="Back" to="/" />
+          <Button icon="&#xE76B;" text="Back" to="/tictactoe" />
           <Button
             icon="&#xE149;"
             text="Restart"

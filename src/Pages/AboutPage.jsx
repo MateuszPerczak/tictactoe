@@ -44,7 +44,7 @@ const InfoPage = () => {
         <TextSeperator space={2} />
       </Animate>
       <Animate delay={2.4} duration={0.2} type="scale">
-        <Button icon="&#xE76B;" text="Back" to="/" />
+        <Button icon="&#xE76B;" text="Back" to="/tictactoe" />
       </Animate>
     </Page>
   );

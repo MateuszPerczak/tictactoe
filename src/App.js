@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { Global, css } from "@emotion/react";
+import Page from "./Components/Page/Page";
 
 const MainPage = lazy(() => {
   return import("./Pages/MainPage");
@@ -36,7 +37,7 @@ const App = () => {
           }
         `}
       />
-      <Suspense fallback={<></>}>
+      <Suspense fallback={<Page />}>
         <Routes>
           <Route path="/tictactoe" element={<MainPage />} />
           <Route path="tictactoe/play" element={<PlayPage />} />

@@ -30,8 +30,8 @@ const MainPage = () => {
           animateGroup
           step={0.1}
         >
-          <Button icon="&#xE102;" text="Play" to="/play" />
-          <Button icon="&#xE946;" text="About" to="/about" />
+          <Button icon="&#xE102;" text="Play" to="/tictactoe/play" />
+          <Button icon="&#xE946;" text="About" to="/tictactoe/about" />
         </Animate>
       </ButtonsWrapper>
     </Page>

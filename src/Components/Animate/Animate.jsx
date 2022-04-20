@@ -46,6 +46,7 @@ const Animate = ({
           duration={duration}
           type={type}
           key={index}
+          infinite={infinite}
         >
           {child}
         </Animate>
