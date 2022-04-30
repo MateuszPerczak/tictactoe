@@ -13,6 +13,9 @@
 - Lodash
 - Emotion
 
+## Used Icons
+- Fluent UI System Icons
+
 ## Available Scripts
 
 In the project directory, you can run:
