@@ -11,7 +11,7 @@ const StylesWrapper = styled.div`
     ${({ duration }) => {
       return duration;
     }}s
-    ease-out
+    ease-in-out
     ${({ delay }) => {
       return delay;
     }}s

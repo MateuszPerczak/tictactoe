@@ -17,13 +17,15 @@ const Winner = ({ winner }) => {
   const icons = {
     X: "\uEF2C",
     O: "\uED66",
-    XO: "\uE899",
+    XO: "\uF1AD",
   };
 
   return (
     <StyledWinner>
-      <Animate delay={0.2} duration={0.2} type="puff" animateGroup step={0.1}>
-        <Icon icon={icons[winner]} size={5} bold={winner === "O"} />
+      <Animate delay={0.2} duration={0.2} type="scale" animateGroup step={0.1}>
+        <Animate delay={0.3} duration={1} type="win">
+          <Icon icon={icons[winner]} size={5} bold={winner === "O"} />
+        </Animate>
         <Text text={winner === "XO" ? "Tie!" : "Wins!"} />
       </Animate>
     </StyledWinner>

@@ -18,7 +18,7 @@ const StyledLine = styled.div`
   height: 0%;
   background: #fff;
   border-radius: 16px;
-  animation: height 0.3s both 1s;
+  animation: height 0.3s both 0.1s;
 
   @keyframes height {
     0% {

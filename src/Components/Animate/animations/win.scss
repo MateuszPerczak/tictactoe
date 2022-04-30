@@ -1,0 +1,21 @@
+.animate {
+  will-change: transform;
+  @keyframes win {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0;
+      transform: translateY(-500px) rotate(360deg);
+      filter: blur(20px);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
