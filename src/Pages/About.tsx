@@ -16,8 +16,8 @@ const About: FC = (): JSX.Element => {
   });
 
   const content = useSpring({
-    from: { opacity: 0, transform: "scale(0.9)", height: "0%" },
-    to: { opacity: 1, transform: "scale(1)", height: "50%" },
+    from: { opacity: 0, transform: "scale(0.9)", height: "0px" },
+    to: { opacity: 1, transform: "scale(1)", height: "410px" },
     config: { tension: 400 },
     delay: 600,
   });
