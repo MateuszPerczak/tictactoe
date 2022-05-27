@@ -10,7 +10,7 @@ const App = (): JSX.Element => {
   return (
     <>
       <GlobalStyle />
-      <BrowserRouter>
+      <BrowserRouter basename="/tictactoe">
         <Suspense fallback={<></>}>
           <Routes>
             <Route path="/" element={<Main />} />
