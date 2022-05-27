@@ -11,6 +11,7 @@ const Text: FC<TextProps> = styled.span<TextProps>`
   font-size: ${({ fontSize }) => {
     return fontSize ? fontSize : "2";
   }}rem;
+  text-overflow: ellipsis;
 `;
 
 export default memo(Text);

@@ -12,14 +12,14 @@ const About: FC = (): JSX.Element => {
     from: { opacity: 0, transform: "scale(0.9)" },
     to: { opacity: 1, transform: "scale(1)" },
     config: { tension: 200 },
-    delay: 500,
+    delay: 200,
   });
 
   const content = useSpring({
     from: { opacity: 0, transform: "scale(0.9)", height: "0%" },
     to: { opacity: 1, transform: "scale(1)", height: "50%" },
     config: { tension: 400 },
-    delay: 1000,
+    delay: 600,
   });
 
   return (
@@ -46,7 +46,9 @@ const About: FC = (): JSX.Element => {
         }}
       >
         <Header fontSize={2}>Used libraries:</Header>
-        <Text fontSize={1.5}>React, Emotion, react-spring</Text>
+        <Text fontSize={1.5}>
+          React, Emotion, react-spring, react-router-dom
+        </Text>
         <Header fontSize={2}>Used icons:</Header>
         <Text fontSize={1.5}>Microsoft Fluent UI Icons</Text>
         <Header fontSize={2}>Useful links:</Header>
@@ -63,7 +65,7 @@ const About: FC = (): JSX.Element => {
           <Text>Website</Text>
         </Link>
         <Button to="/">
-          <Icon>&#xE00E;</Icon>
+          <Icon>&#xE10F;</Icon>
           <Text>Back</Text>
         </Button>
       </animated.div>

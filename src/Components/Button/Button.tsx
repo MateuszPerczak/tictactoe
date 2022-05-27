@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import type { RefAttributes, PropsWithChildren } from "react";
+import type { RefAttributes, PropsWithChildren, FC } from "react";
 import { Link, LinkProps } from "react-router-dom";
 
 type ButtonProps = PropsWithChildren<
@@ -24,14 +24,16 @@ const StyledButton = styled(Link)<StyledButtonProps>`
   &:hover {
     background-color: #fff;
     color: #212121;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   }
   &:active {
     transform: scale(0.95);
   }
 `;
 
-const Button = ({ children, ...rest }: ButtonProps): JSX.Element => {
+const Button: FC<ButtonProps> = ({
+  children,
+  ...rest
+}: ButtonProps): JSX.Element => {
   return <StyledButton {...rest}>{children}</StyledButton>;
 };
 

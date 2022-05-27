@@ -11,14 +11,14 @@ const Main: FC = (): JSX.Element => {
     from: { opacity: 0, transform: "scale(0.94)" },
     to: { opacity: 1, transform: "scale(1)" },
     config: { tension: 400 },
-    delay: 500,
+    delay: 200,
   });
 
   const content = useSpring({
     from: { opacity: 0, transform: "scale(0.9)", height: "0%" },
     to: { opacity: 1, transform: "scale(1)", height: "15%" },
     config: { tension: 200 },
-    delay: 1000,
+    delay: 600,
   });
 
   return (
@@ -42,6 +42,9 @@ const Main: FC = (): JSX.Element => {
           <Icon>&#xE946;</Icon>
           <Text>About</Text>
         </Button>
+      </animated.div>
+      <animated.div style={header}>
+        <Text>By: Mateusz Perczak</Text>
       </animated.div>
     </Page>
   );

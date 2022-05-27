@@ -24,6 +24,10 @@ const GlobalStyle: FC = (): ReactElement => {
           height: 100vh;
           background-image: url(./images/background.webp);
         }
+        ::selection {
+          background: #fff;
+          color: #212121;
+        }
         @font-face {
           font-family: "Segoe Fluent Icons";
           src: url("./fonts/Segoe Fluent Icons.ttf") format("truetype");
