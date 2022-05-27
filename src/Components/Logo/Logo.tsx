@@ -1,21 +1,41 @@
-import styled from "@emotion/styled";
+import styled, { StyledComponent } from "@emotion/styled";
 import Icon from "../Icon/Icon";
 import Header from "../Header/Header";
+import type { Theme } from "@emotion/react";
+import type { ElementType, DetailedHTMLProps, HTMLAttributes, FC } from "react";
 
-const StyledLogo = styled.div`
+type LogoComponent = StyledComponent<
+  {
+    theme?: Theme;
+    as?: ElementType;
+  },
+  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
+  Record<string, unknown>
+>;
+
+type IconComponent = StyledComponent<
+  {
+    theme?: Theme;
+    as?: ElementType;
+  },
+  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
+  Record<string, unknown>
+>;
+
+const StyledLogo: LogoComponent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
-const StyledIcons = styled.div`
+const StyledIcons: IconComponent = styled.div`
   display: flex;
   flex-direction: row;
   gap: 10px;
 `;
 
-const Logo = (): JSX.Element => {
+const Logo: FC = (): JSX.Element => {
   return (
     <StyledLogo>
       <StyledIcons>

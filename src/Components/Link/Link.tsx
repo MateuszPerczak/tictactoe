@@ -1,4 +1,11 @@
-import styled from "@emotion/styled";
+import type { Theme } from "@emotion/react";
+import styled, { Interpolation } from "@emotion/styled";
+import type { AnchorHTMLAttributes, ClassAttributes, FC } from "react";
+
+type LinkProps = ClassAttributes<HTMLAnchorElement> &
+  AnchorHTMLAttributes<HTMLAnchorElement> & {
+    css?: Interpolation<Theme>;
+  };
 
 const StyledLink = styled.a`
   display: flex;
@@ -24,7 +31,7 @@ const StyledLink = styled.a`
   }
 `;
 
-const Link = ({ ...rest }) => {
+const Link: FC<LinkProps> = ({ ...rest }: LinkProps): JSX.Element => {
   return <StyledLink {...rest} target="_blank" rel="noopener noreferrer" />;
 };
 

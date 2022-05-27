@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import type { FC, ReactNode } from "react";
+import type { FC, PropsWithChildren } from "react";
 
 const StyledPage = styled.div`
   display: flex;
@@ -11,9 +11,7 @@ const StyledPage = styled.div`
   overflow: hidden;
 `;
 
-type PageProps = {
-  children: ReactNode;
-};
+type PageProps = PropsWithChildren<Record<string, unknown>>;
 
 const Page: FC<PageProps> = ({ children }: PageProps): JSX.Element => {
   return <StyledPage>{children}</StyledPage>;

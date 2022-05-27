@@ -1,11 +1,22 @@
-import styled from "@emotion/styled";
+import type { Theme } from "@emotion/react";
+import styled, { StyledComponent } from "@emotion/styled";
+import type { DetailedHTMLProps, ElementType, HTMLAttributes } from "react";
 
 type IconProps = {
   fontSize?: number;
   bold?: boolean;
 };
 
-const Icon = styled.span<IconProps>`
+type IconComponent = StyledComponent<
+  {
+    theme?: Theme;
+    as?: ElementType;
+  } & IconProps,
+  DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>,
+  Record<string, unknown>
+>;
+
+const Icon: IconComponent = styled.span<IconProps>`
   font-family: "Segoe Fluent Icons";
   font-size: ${({ fontSize }: IconProps) => {
     return fontSize ? fontSize : "1.5";

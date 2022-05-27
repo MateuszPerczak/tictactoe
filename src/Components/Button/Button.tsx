@@ -1,12 +1,10 @@
 import styled from "@emotion/styled";
-import type { RefAttributes } from "react";
+import type { RefAttributes, PropsWithChildren } from "react";
 import { Link, LinkProps } from "react-router-dom";
 
-type ButtonProps = {
-  onClick?: Function;
-  children?: React.ReactNode;
-  to?: string;
-};
+type ButtonProps = PropsWithChildren<
+  LinkProps & RefAttributes<HTMLAnchorElement>
+>;
 
 type StyledButtonProps = LinkProps & RefAttributes<HTMLAnchorElement>;
 
@@ -33,8 +31,8 @@ const StyledButton = styled(Link)<StyledButtonProps>`
   }
 `;
 
-const Button = ({ children, onClick, to = "" }: ButtonProps): JSX.Element => {
-  return <StyledButton to={to}>{children}</StyledButton>;
+const Button = ({ children, ...rest }: ButtonProps): JSX.Element => {
+  return <StyledButton {...rest}>{children}</StyledButton>;
 };
 
 export default Button;

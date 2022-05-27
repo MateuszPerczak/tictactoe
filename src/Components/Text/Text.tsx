@@ -1,11 +1,11 @@
-import { memo } from "react";
+import { memo, FC, PropsWithChildren } from "react";
 import styled from "@emotion/styled";
 
-type TextProps = {
+type TextProps = PropsWithChildren<{
   fontSize?: number;
-};
+}>;
 
-const Text = styled.span<TextProps>`
+const Text: FC<TextProps> = styled.span<TextProps>`
   line-height: 0.5;
   padding-top: 3px;
   font-size: ${({ fontSize }) => {
