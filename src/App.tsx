@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import GlobalStyle from "./Global/Global";
+import GlobalStyle from "./Global/Styles";
 
 const Main = lazy(() => import("./Pages/Main"));
 const About = lazy(() => import("./Pages/About"));
