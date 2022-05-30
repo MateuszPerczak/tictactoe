@@ -1,12 +1,16 @@
 import styled from "@emotion/styled";
-import { FC, useState } from "react";
+import type { FC } from "react";
+// import Icon from "../Icon/Icon";
+import BoardElement from "../BoardElement/BoardElement";
 
 const StyledBoard = styled.div`
   display: grid;
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(3, 33%);
   overflow: hidden;
+  padding: 10px;
   width: min(50vh, 90vw);
   height: min(50vh, 90vw);
   backdrop-filter: blur(8px);
@@ -15,28 +19,42 @@ const StyledBoard = styled.div`
   border: 2px solid #fff;
 `;
 
-const StyledSquare = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 6rem;
-  width: auto;
-  height: 100%;
-  &:hover {
-    cursor: pointer;
-  }
-`;
+type BoardProps = {
+  board: Array<string>;
+  setBoard: Function;
+};
 
-const Board: FC = (): JSX.Element => {
-  const [board, _] = useState(Array(9).fill(""));
+const Board: FC<BoardProps> = ({
+  board,
+  setBoard,
+}: BoardProps): JSX.Element => {
+  // const [board, setBoard] = useState(Array(9).fill(""));
+
+  // const [player, setPlayer] = useState("X");
+
+  // const handleClick = (index: number): void => {
+  //   if (board[index] === "") {
+  //     const newBoard = [...board];
+  //     newBoard[index] = player;
+  //     setBoard(newBoard);
+  //     changePlayer();
+  //   }
+  // };
+
+  // const changePlayer = () => {
+  //   setPlayer(player === "X" ? "O" : "X");
+  // };
 
   return (
     <StyledBoard>
-      {board.map((square) => {
-        return <StyledSquare>{square}</StyledSquare>;
+      {board.map((value, key) => {
+        return <BoardElement key={key}>{value}</BoardElement>;
       })}
     </StyledBoard>
   );
 };
 
 export default Board;
+
+// &#xED66; circle
+// &#xEF2C; cross

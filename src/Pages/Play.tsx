@@ -1,19 +1,9 @@
 import type { FC } from "react";
 import { useSpring, animated } from "react-spring";
 import Page from "../Components/Page/Page";
-import Button from "../Components/Button/Button";
-import Text from "../Components/Text/Text";
-import Icon from "../Components/Icon/Icon";
-import Logo from "../Components/Logo/Logo";
-import Board from "../Components/Board/Board";
-import styled from "@emotion/styled";
 
-const StyledPanel = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  padding: 10px;
-`;
+import Logo from "../Components/Logo/Logo";
+import Game from "../Components/Game/Game";
 
 const Play: FC = (): JSX.Element => {
   const header = useSpring({
@@ -35,17 +25,7 @@ const Play: FC = (): JSX.Element => {
         }}
       >
         <Logo />
-        <Board />
-        <StyledPanel>
-          <Button to="/">
-            <Icon>&#xE10F;</Icon>
-            <Text>Back</Text>
-          </Button>
-          <Button to="">
-            <Icon>&#xE72C;</Icon>
-            <Text>Restart</Text>
-          </Button>
-        </StyledPanel>
+        <Game />
       </animated.div>
     </Page>
   );
