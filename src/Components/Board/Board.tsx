@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import type { FC } from "react";
-// import Icon from "../Icon/Icon";
+import Text from "../Text/Text";
 import BoardElement from "../BoardElement/BoardElement";
 import Icon from "../Icon/Icon";
 
@@ -16,28 +16,55 @@ const StyledBoard = styled.div`
   border: 2px solid #fff;
 `;
 
+const StyledWinner = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+`;
+
 type BoardProps = {
   board: Array<string>;
   handleClick: Function;
-  playerToIcon: { [key: string]: string };
+  winner: string;
 };
 
 const Board: FC<BoardProps> = ({
   board,
   handleClick,
-  playerToIcon,
+  winner,
 }: BoardProps): JSX.Element => {
+  const playerToIcon: { [key: string]: string } = {
+    X: "\uEF2C",
+    O: "\uED66",
+    XO: "\uF1AD",
+  };
+
   return (
     <StyledBoard>
-      {board.map((value, key) => {
-        return (
-          <BoardElement key={key} onClick={() => handleClick(key)}>
-            <Icon fontSize={5} bold={value === "O" ? true : false}>
-              {playerToIcon[value]}
-            </Icon>
-          </BoardElement>
-        );
-      })}
+      {winner === "" ? (
+        board.map((player, key) => {
+          return (
+            <BoardElement key={key} onClick={() => handleClick(key)}>
+              <Icon fontSize={5} bold={player === "O" ? true : false}>
+                {playerToIcon[player]}
+              </Icon>
+            </BoardElement>
+          );
+        })
+      ) : (
+        <StyledWinner>
+          <Icon fontSize={4}>&#xEF2C;</Icon>
+          <Text fontSize={4}>Wins!</Text>
+        </StyledWinner>
+      )}
     </StyledBoard>
   );
 };

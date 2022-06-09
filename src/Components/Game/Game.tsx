@@ -28,6 +28,7 @@ const Game: FC = (): JSX.Element => {
   const [player, setPlayer] = useState("X");
   const [moves, setMoves] = useState(0);
   const [allowMove, setAllowMove] = useState(true);
+  const [winner, setWinner] = useState("");
 
   const handleClick = (index: number): void => {
     if (board[index] === "" && allowMove) {
@@ -37,17 +38,20 @@ const Game: FC = (): JSX.Element => {
     }
   };
 
-  const handleWin = (winner: string) => {
-    alert(`${winner} won!`);
-    setAllowMove(false);
-  };
+  // const handleWin = (winner: string) => {
+  //   alert(`${winner} won!`);
+  //   setAllowMove(false);
+  // };
 
   useEffect(() => {
-    const winner: string = checkWinners(board, moves);
-    if (winner) {
-      handleWin(winner);
+    const winner = checkWinners(board, moves);
+    if (winner !== "") {
+      setAllowMove(false);
+      setTimeout(() => {
+        setWinner(winner);
+      }, 400);
     }
-  }, [board]);
+  }, [board, moves]);
 
   // const resetGame = (): void => {
   //   setBoard(Array(9).fill(""));
@@ -56,26 +60,23 @@ const Game: FC = (): JSX.Element => {
   //   setAllowMove(true);
   // };
 
-  const playerToIcon = {
-    X: "\uEF2C",
-    O: "\uED66",
-    XO: "\uF1AD",
-  };
+  // const playerToIcon = {
+  //   X: "\uEF2C",
+  //   O: "\uED66",
+  //   XO: "\uF1AD",
+  // };
 
   return (
     <>
       <StyledPanel style={content}>
         <Text>Now</Text>
         <Icon bold={player === "O" ? true : false}>
-          {player === "X" ? playerToIcon.X : playerToIcon.O}
+          {player === "X" ? "\uEF2C" : "\uED66"}
         </Icon>
         <Text>turn!</Text>
       </StyledPanel>
-      <Board
-        board={board}
-        handleClick={handleClick}
-        playerToIcon={playerToIcon}
-      />
+
+      <Board board={board} handleClick={handleClick} winner={winner} />
       <StyledPanel>
         <Button to="/">
           <Icon>&#xE10F;</Icon>
