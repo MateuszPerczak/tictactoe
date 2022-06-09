@@ -8,19 +8,27 @@ const StyledElement = styled.div`
   width: 100%;
   height: 100%;
   user-select: none;
+  border-radius: 30px;
+  transition: color 200ms, background-color 200ms;
   &:hover {
     cursor: pointer;
-    border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    color: #252525;
+  }
+  &:active {
+    background-color: #212121;
   }
 `;
 
-type ElementProps = PropsWithChildren<Record<string, unknown>>;
+type ElementProps = PropsWithChildren<{
+  onClick: Function;
+}>;
 
 const BoardElement: FC<ElementProps> = ({
   children,
+  onClick,
 }: ElementProps): JSX.Element => {
-  return <StyledElement>{children}</StyledElement>;
+  return <StyledElement onClick={onClick}>{children}</StyledElement>;
 };
 
 export default BoardElement;
