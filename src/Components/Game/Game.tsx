@@ -24,6 +24,8 @@ const Game: FC = (): JSX.Element => {
     delay: 500,
   });
 
+  //
+
   const [board, setBoard] = useState(Array(9).fill(""));
   const [player, setPlayer] = useState("X");
   const [moves, setMoves] = useState(0);
@@ -38,11 +40,6 @@ const Game: FC = (): JSX.Element => {
     }
   };
 
-  // const handleWin = (winner: string) => {
-  //   alert(`${winner} won!`);
-  //   setAllowMove(false);
-  // };
-
   useEffect(() => {
     const winner = checkWinners(board, moves);
     if (winner !== "") {
@@ -52,19 +49,6 @@ const Game: FC = (): JSX.Element => {
       }, 100);
     }
   }, [board, moves]);
-
-  // const resetGame = (): void => {
-  //   setBoard(Array(9).fill(""));
-  //   setPlayer("X");
-  //   setMoves(1);
-  //   setAllowMove(true);
-  // };
-
-  // const playerToIcon = {
-  //   X: "\uEF2C",
-  //   O: "\uED66",
-  //   XO: "\uF1AD",
-  // };
 
   return (
     <>

@@ -55,6 +55,7 @@ const Board: FC<BoardProps> = ({
     X: "\uEF2C",
     O: "\uED66",
     XO: "\uE899",
+    "": "",
   };
 
   const winnerAnimation = useSpring({
@@ -64,18 +65,37 @@ const Board: FC<BoardProps> = ({
   });
 
   const boardAnimation = useSpring({
-    opacity: `${winner === "" ? 1 : 0.1}`,
+    filter: `blur(${winner === "" ? 0 : 8}px) saturate(${
+      winner === "" ? 0 : 180
+    }%)`,
   });
 
   return (
     <StyledBoard>
       <StyledArea style={boardAnimation}>
+        {/* {playerAnimation(({ opacity }, item, _, index) => {
+          console.log(item, index);
+          return (
+            <animated.div
+              style={{ opacity: opacity, backgroundColor: "#212121" }}
+              onClick={() => handleClick(index)}
+              key={index}
+            >
+              <Icon fontSize={4} bold={item === "O" ? true : false}>
+                {item}
+              </Icon>
+            </animated.div>
+          );
+        })} */}
+
         {board.map((player, index) => {
           return (
             <BoardElement key={index} onClick={() => handleClick(index)}>
-              <Icon fontSize={4} bold={player === "O" ? true : false}>
-                {playerToIcon[player]}
-              </Icon>
+              <animated.div>
+                <Icon fontSize={4} bold={player === "O" ? true : false}>
+                  {playerToIcon[player]}
+                </Icon>
+              </animated.div>
             </BoardElement>
           );
         })}

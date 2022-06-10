@@ -1,19 +1,20 @@
 import type { FC, PropsWithChildren } from "react";
 import styled from "@emotion/styled";
 
-const StyledElement = styled.div`
+const StyledElement = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
+  border: none;
   user-select: none;
   transition: color 200ms, background-color 200ms;
   background-color: #212121;
+  color: #fff;
   &:hover {
     cursor: pointer;
     background-color: #252525aa;
-    color: #fff;
   }
   &:active {
     background-color: #212121aa;
@@ -21,7 +22,7 @@ const StyledElement = styled.div`
 `;
 
 type ElementProps = PropsWithChildren<{
-  onClick: Function;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 }>;
 
 const BoardElement: FC<ElementProps> = ({
