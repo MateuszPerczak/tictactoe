@@ -49,7 +49,7 @@ const Game: FC = (): JSX.Element => {
       setAllowMove(false);
       setTimeout(() => {
         setWinner(winner);
-      }, 400);
+      }, 100);
     }
   }, [board, moves]);
 
@@ -75,7 +75,6 @@ const Game: FC = (): JSX.Element => {
         </Icon>
         <Text>turn!</Text>
       </StyledPanel>
-
       <Board board={board} handleClick={handleClick} winner={winner} />
       <StyledPanel>
         <Button to="/">
@@ -84,10 +83,13 @@ const Game: FC = (): JSX.Element => {
         </Button>
         <Button
           to=""
-          // onClick={() => {
-          //   setBoard(Array(9).fill(""));
-          //   setPlayer("X");
-          // }}
+          onClick={() => {
+            setPlayer("X");
+            setWinner("");
+            setMoves(0);
+            setAllowMove(true);
+            setBoard(Array(9).fill(""));
+          }}
         >
           <Icon>&#xE72C;</Icon>
           <Text>Restart</Text>

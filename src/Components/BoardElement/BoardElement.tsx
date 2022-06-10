@@ -8,15 +8,15 @@ const StyledElement = styled.div`
   width: 100%;
   height: 100%;
   user-select: none;
-  border-radius: 30px;
   transition: color 200ms, background-color 200ms;
+  background-color: #212121;
   &:hover {
     cursor: pointer;
-    background-color: #fff;
-    color: #252525;
+    background-color: #252525aa;
+    color: #fff;
   }
   &:active {
-    background-color: #212121;
+    background-color: #212121aa;
   }
 `;
 
