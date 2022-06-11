@@ -17,10 +17,10 @@ const StyledElement = styled.div`
   background-color: #212121;
   &:hover {
     cursor: pointer;
-    background-color: #252525aa;
+    background-color: #252525;
   }
   &:active {
-    background-color: #212121aa;
+    background-color: #212121;
   }
 `;
 
