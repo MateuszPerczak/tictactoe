@@ -69,20 +69,36 @@ const Board: FC<BoardProps> = ({
       winner === "" ? 0 : 180
     }%)`,
   });
+  // const playerAnimation = useTransition(board, {
+  //   enter: { opacity: 1 },
+  //   keys: (item, index) => index,
+  //   update: (item) => {
+  //     return {
+  //       color: item === "" ? "#212121" : "#fff",
+  //     };
+  //   },
+  // });
 
   return (
     <StyledBoard>
       <StyledArea style={boardAnimation}>
-        {/* {playerAnimation(({ opacity }, item, _, index) => {
+        {/* {playerAnimation(({ opacity, color }, item, _, index) => {
           console.log(item, index);
           return (
             <animated.div
-              style={{ opacity: opacity, backgroundColor: "#212121" }}
+              style={{
+                opacity: opacity,
+                color: color,
+                backgroundColor: "#212121",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
               onClick={() => handleClick(index)}
               key={index}
             >
               <Icon fontSize={4} bold={item === "O" ? true : false}>
-                {item}
+                {playerToIcon[item]}
               </Icon>
             </animated.div>
           );

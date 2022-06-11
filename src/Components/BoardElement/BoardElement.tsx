@@ -1,17 +1,20 @@
-import type { FC, PropsWithChildren } from "react";
-import styled from "@emotion/styled";
+import type {
+  ClassAttributes,
+  FC,
+  HTMLAttributes,
+  PropsWithChildren,
+} from "react";
+import styled, { Interpolation } from "@emotion/styled";
+import type { Theme } from "@emotion/react";
 
-const StyledElement = styled.button`
+const StyledElement = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  border: none;
-  user-select: none;
   transition: color 200ms, background-color 200ms;
   background-color: #212121;
-  color: #fff;
   &:hover {
     cursor: pointer;
     background-color: #252525aa;
@@ -21,15 +24,17 @@ const StyledElement = styled.button`
   }
 `;
 
-type ElementProps = PropsWithChildren<{
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-}>;
+type ElementProps = PropsWithChildren<
+  ClassAttributes<HTMLDivElement> &
+    HTMLAttributes<HTMLDivElement> & {
+      css?: Interpolation<Theme>;
+    }
+>;
 
 const BoardElement: FC<ElementProps> = ({
-  children,
-  onClick,
+  ...rest
 }: ElementProps): JSX.Element => {
-  return <StyledElement onClick={onClick}>{children}</StyledElement>;
+  return <StyledElement {...rest} />;
 };
 
 export default BoardElement;
