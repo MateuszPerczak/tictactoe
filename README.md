@@ -6,8 +6,6 @@
 
 **This is my first TypeScript project!**
 
-`This project is still in development!`
-
 ![Preview](./images/preview.png)
 
 ## Running this project
