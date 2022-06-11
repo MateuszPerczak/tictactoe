@@ -12,7 +12,7 @@ const StyledBoard = styled.div`
   width: min(40vh, 70vw);
   height: min(40vh, 70vw);
   border-radius: 30px;
-  border: 2px solid #fff;
+  border: 2px solid #333;
   backdrop-filter: blur(8px) saturate(180%);
   overflow: hidden;
 `;
@@ -24,7 +24,7 @@ const StyledArea = styled(animated.div)`
   gap: 2px;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #333;
   z-index: 1;
 `;
 

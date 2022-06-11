@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import { useSpring, animated } from "react-spring";
 import Page from "../Components/Page/Page";
-
 import Logo from "../Components/Logo/Logo";
 import Game from "../Components/Game/Game";
 

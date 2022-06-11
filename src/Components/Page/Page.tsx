@@ -1,7 +1,16 @@
-import styled from "@emotion/styled";
-import type { FC, PropsWithChildren } from "react";
+import type { Theme } from "@emotion/react";
+import styled, { StyledComponent } from "@emotion/styled";
 
-const StyledPage = styled.div`
+type PageProps = StyledComponent<
+  {
+    theme?: Theme | undefined;
+    as?: React.ElementType<any> | undefined;
+  },
+  React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
+  {}
+>;
+
+const Page: PageProps = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,11 +19,5 @@ const StyledPage = styled.div`
   height: 100%;
   overflow: hidden;
 `;
-
-type PageProps = PropsWithChildren<Record<string, unknown>>;
-
-const Page: FC<PageProps> = ({ children }: PageProps): JSX.Element => {
-  return <StyledPage>{children}</StyledPage>;
-};
 
 export default Page;
