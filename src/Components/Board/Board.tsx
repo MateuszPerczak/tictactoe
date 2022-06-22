@@ -3,6 +3,7 @@ import type { FC } from "react";
 import Text from "../Text/Text";
 import BoardElement from "../BoardElement/BoardElement";
 import Icon from "../Icon/Icon";
+import BoardIcon from "../BoardIcon/BoardIcon";
 import { useSpring, animated } from "react-spring";
 
 const StyledBoard = styled.div`
@@ -108,9 +109,9 @@ const Board: FC<BoardProps> = ({
           return (
             <BoardElement key={index} onClick={() => handleClick(index)}>
               <animated.div>
-                <Icon fontSize={4} bold={player === "O" ? true : false}>
+                <BoardIcon bold={player === "O" ? true : false}>
                   {playerToIcon[player]}
-                </Icon>
+                </BoardIcon>
               </animated.div>
             </BoardElement>
           );
