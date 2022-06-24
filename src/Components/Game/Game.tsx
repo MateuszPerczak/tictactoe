@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import Text from "../Text/Text";
 import Icon from "../Icon/Icon";
 import styled from "@emotion/styled";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, useTransition } from "react-spring";
 import { updateBoard, updatePlayer, checkWinners } from "../../Hooks/game";
 
 const StyledPanel = styled(animated.div)`
@@ -50,13 +50,43 @@ const Game: FC = (): JSX.Element => {
     }
   }, [board, moves]);
 
+  const move: { [key: string]: number } = {
+    X: 0,
+    O: 1,
+  };
+
+  const animatedMove = useTransition(player, {
+    from: { transform: "scale(2)", opacity: 0 },
+    enter: { transform: "scale(1)", opacity: 1 },
+    leave: { transform: "scale(0)", opacity: 0 },
+    config: {
+      mass: 1,
+      tension: 550,
+      clamp: true,
+    },
+    keys: (item) => move[item],
+    exitBeforeEnter: true,
+  });
+
   return (
     <>
       <StyledPanel style={content}>
         <Text>Now</Text>
-        <Icon bold={player === "O" ? true : false}>
-          {player === "X" ? "\uEF2C" : "\uED66"}
-        </Icon>
+        {animatedMove((style, player) => {
+          return (
+            <animated.div style={style}>
+              <Icon bold={player === "O" ? true : false}>
+                {player === "X" ? "\uEF2C" : "\uED66"}
+              </Icon>
+            </animated.div>
+          );
+        })}
+
+        {/* <animated.div style={{ ...animatedMove }}>
+          <Icon bold={player === "O" ? true : false}>
+            {player === "X" ? "\uEF2C" : "\uED66"}
+          </Icon>
+        </animated.div> */}
         <Text>turn!</Text>
       </StyledPanel>
       <Board board={board} handleClick={handleClick} winner={winner} />
