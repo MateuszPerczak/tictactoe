@@ -1659,7 +1659,12 @@
     "@react-spring/shared" "~9.4.5"
     "@react-spring/types" "~9.4.5"
 
-"@react-spring/types@^9.4.5", "@react-spring/types@~9.4.5":
+"@react-spring/types@^9.5.1":
+  version "9.5.1"
+  resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.5.1.tgz#00514faf8f655f46c8c15c98c89ddb59d3acff66"
+  integrity sha512-rDppRFYFmLnscvXJC5G/plJdHpEWHzaPA3cTk2NDieVFhAJEZUTzsxYgpnvyrGJ8AmsMRkWflDrKqCXFhHm0+A==
+
+"@react-spring/types@~9.4.5":
   version "9.4.5"
   resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.4.5.tgz#9c71e5ff866b5484a7ef3db822bf6c10e77bdd8c"
   integrity sha512-mpRIamoHwql0ogxEUh9yr4TP0xU5CWyZxVQeccGkHHF8kPMErtDXJlxyo0lj+telRF35XNihtPTWoflqtyARmg==
