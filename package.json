@@ -4,7 +4,7 @@
   "homepage": "https://mateuszperczak.github.io/tictactoe/",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.9.0",
+    "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.8.1",
     "@react-spring/types": "^9.4.5",
     "@testing-library/jest-dom": "^5.14.1",
