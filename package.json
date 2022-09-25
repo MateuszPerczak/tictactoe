@@ -1,57 +1,35 @@
 {
-  "name": "tictactoe",
-  "version": "0.1.0",
-  "homepage": "https://mateuszperczak.github.io/tictactoe/",
+  "name": "vite-app",
   "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@react-spring/types": "^9.4.5",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.13",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.0",
-    "gh-pages": "^4.0.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-reduce-motion": "^2.0.2",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "react-spring": "^9.4.5",
-    "touch": "^3.1.0",
-    "typescript": "^4.4.2",
-    "web-vitals": "^2.1.0"
-  },
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "start": "cross-env PUBLIC_URL=/ react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "publish": "gh-pages -b deploy -d build -t true",
-    "build:publish": "npm run build && nodetouch ./build/.nojekyll && npm run publish"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "framer-motion": "^7.3.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-use-system-theme": "^1.1.1",
+    "rxjs": "^7.5.6"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "@emotion/babel-plugin": "^11.10.2",
+    "@nabla/vite-plugin-eslint": "^1.4.1",
+    "@types/node": "^18.7.18",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "@vitejs/plugin-react": "^2.1.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.31.8",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
   }
 }

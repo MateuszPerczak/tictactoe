@@ -1,27 +1,25 @@
-# TicTacToe
+# Vite Template
 
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fmateuszperczak.github.io%2Ftictactoe%2F)
-![GitHub](https://img.shields.io/github/license/MateuszPerczak/tictactoe)
-![GitHub last commit](https://img.shields.io/github/last-commit/MateuszPerczak/tictactoe)
+![GitHub](https://img.shields.io/github/license/MateuszPerczak/vite-app?style=flat-square)
+![Website preview](./public/preview.png)
 
-**This is my first TypeScript project!**
+## Libraries
 
-![Preview](./images/preview.png)
+- React
+- Emotion
+- Framer-motion
+- Vite
 
 ## Running this project
 
-### First install the dependencies simply by running
+1. Install all dependencies.
 
-```bash
+```sh
 yarn
 ```
 
-`Tho, make sure that yarn in installed on your computer`
+2. Start vite development server.
 
-### Next, run the project
-
-```bash
-yarn start
+```sh
+yarn dev
 ```
-
-### `Done!`
