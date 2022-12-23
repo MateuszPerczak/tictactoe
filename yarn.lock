@@ -511,10 +511,10 @@
     hey-listen "^1.0.8"
     tslib "^2.3.1"
 
-"@nabla/vite-plugin-eslint@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@nabla/vite-plugin-eslint/-/vite-plugin-eslint-1.4.1.tgz#249524528916dde987ccd9532ffe63ad4fae6492"
-  integrity sha512-H19ReYMRdy7i6zz7HKYcBlfv/4Nu/sv9Wtu9+GImQ5nzCgOz4RRUqnj/PJ2OuATcbxNgLr1NSbk7miJDdK6BOw==
+"@nabla/vite-plugin-eslint@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@nabla/vite-plugin-eslint/-/vite-plugin-eslint-1.5.0.tgz#ed2a301f01f27984daec53fc20f7617f8cab133b"
+  integrity sha512-3NR+mHcW4lY9n1t+cqM8W1xM/UQXKpuDyaoJmPPQKoBCEjFoSvE4XcJwG86lk7K0AauqWwecsgEhmdZLDW07YQ==
   dependencies:
     "@types/eslint" "*"
     chalk "^4"
