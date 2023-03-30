@@ -1,7 +1,7 @@
 # Vite Template
 
 ![GitHub](https://img.shields.io/github/license/MateuszPerczak/vite-app?style=flat-square)
-![Website preview](./public/preview.png)
+<!-- ![Website preview](./public/preview.png) -->
 
 ## Libraries
 
