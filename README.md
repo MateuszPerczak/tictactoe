@@ -15,11 +15,11 @@
 1. Install all dependencies.
 
 ```sh
-yarn
+pnpm i
 ```
 
 2. Start vite development server.
 
 ```sh
-yarn dev
+pnpm dev
 ```

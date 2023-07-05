@@ -1,8 +1,13 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { debounceTime, fromEvent } from "rxjs";
 
-const useWindowDimensions = () => {
-  const getWindowDimensions = () => {
+type WindowDimensions = {
+  width: number;
+  height: number;
+};
+
+const useWindowDimensions = (): WindowDimensions => {
+  const getWindowDimensions = (): WindowDimensions => {
     const { innerWidth: width, innerHeight: height } = window;
     return { width, height };
   };
@@ -16,7 +21,7 @@ const useWindowDimensions = () => {
         setWindowDimensions(getWindowDimensions());
       });
 
-    return () => subscription.unsubscribe();
+    return (): void => subscription.unsubscribe();
   }, []);
 
   return windowDimensions;
