@@ -1,4 +1,4 @@
-export type Theme = Record<string, string>;
+import type { Theme } from "@emotion/react";
 
 export enum ColorThemes {
   Light = "light",
