@@ -21,6 +21,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
     project: ["./tsconfig.json"],
+    tsconfigRootDir: __dirname,
   },
   plugins: ["react", "@typescript-eslint", "import", "simple-import-sort", "@emotion"],
   rules: {
