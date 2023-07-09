@@ -1,0 +1,14 @@
+{
+  "watch": ["."],
+  "ignore": [
+    "destination",
+    "coverage",
+    "node_modules",
+    ".gitignore",
+    "nodemon.json",
+    "README.md",
+    ".husky"
+  ],
+  "ext": "ts,js",
+  "exec": "yarn run build && yarn run start"
+}
