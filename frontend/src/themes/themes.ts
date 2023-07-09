@@ -11,10 +11,16 @@ const themes: Themes = {
   light: {
     background: "#fff",
     color: "#000",
+    border: "#000",
+    shadow: "#11111133",
+    footer: "#ffffff77",
   },
   dark: {
-    background: "#252525",
+    background: "#212121",
     color: "#fff",
+    border: "#333",
+    shadow: "#11111133",
+    footer: "#212121",
   },
 };
 

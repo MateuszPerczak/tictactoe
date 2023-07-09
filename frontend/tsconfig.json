@@ -17,10 +17,6 @@
     "noEmit": true,
     "noImplicitAny": true,
     "jsx": "react-jsx",
-    "paths": {
-      "@components/*": ["./src/components/*"],
-      "@hooks/*": ["./src/hooks/*"]
-    }
   },
   "include": ["src", ".eslintrc.cjs", "vite.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
