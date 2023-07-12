@@ -3,7 +3,7 @@ import type { FC } from "react";
 import { memo } from "react";
 
 const GlobalStyle: FC = (): JSX.Element => {
-  const { background, color }: Theme = useTheme();
+  const { background, textPrimary }: Theme = useTheme();
   return (
     <Global
       styles={css`
@@ -23,7 +23,7 @@ const GlobalStyle: FC = (): JSX.Element => {
         body {
           display: flex;
           background: ${background};
-          color: ${color};
+          color: ${textPrimary};
           user-select: none;
           font-family: "Nunito";
           background-image: url("./images/background.webp");

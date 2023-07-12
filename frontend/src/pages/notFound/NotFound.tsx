@@ -1,12 +1,10 @@
-import StyledNotFound from "./NotFound.styles";
+import Panel from "../../components/panel/Panel";
 
 const Footer = (): JSX.Element => {
   return (
-    <StyledNotFound>
-      <div className="footer-wrapper">
-        <a>404 Not Found</a>
-      </div>
-    </StyledNotFound>
+    <Panel layoutId="menu">
+      <h1>404 Not Found</h1>
+    </Panel>
   );
 };
 

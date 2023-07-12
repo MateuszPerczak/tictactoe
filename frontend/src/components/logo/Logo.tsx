@@ -6,7 +6,7 @@ import StyledLogo from "./Logo.styles";
 
 const Logo = (): JSX.Element => {
   return (
-    <StyledLogo>
+    <StyledLogo layoutId="logo">
       <span>
         <Icon icon={Icons.Cross} size={30} />
         <Icon icon={Icons.Circle} bold size={30} />

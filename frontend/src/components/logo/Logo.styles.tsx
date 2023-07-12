@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-const StyledLogo = styled.p`
+const StyledLogo = styled(motion.p)`
   display: flex;
   flex-direction: column;
   align-items: center;
