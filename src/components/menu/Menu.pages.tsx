@@ -37,7 +37,12 @@ export const menuPages: MenuPages = (setPage, goBack, page) => {
             description="Actually it's just min max algorithm."
             onClick={(): void => setPage("main")}
           />
-
+          <Button
+            icon={Icons.Play}
+            label="Play with others"
+            description="Coming soon."
+            disabled
+          />
           <Button
             icon={Icons.Back}
             label="Go back"
