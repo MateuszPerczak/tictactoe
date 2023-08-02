@@ -34,6 +34,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "typescript": "^5.0.4",
-    "vite": "^4.3.5"
+    "vite": "^4.4.8"
   }
 }
