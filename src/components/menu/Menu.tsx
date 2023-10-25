@@ -29,7 +29,7 @@ const Menu = (): JSX.Element => {
     });
   };
 
-  const page = useMemo(() => menuPages(setPage, goBack, menuState.page), [menuState]);
+  const page = useMemo(() => menuPages({ setPage, goBack }, menuState.page), [menuState]);
 
   useEffect(() => {
     setTimeout(() => setPage("initial"), 300);

@@ -1,12 +1,17 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-const StyledButton = styled(motion.button)`
+import type { ButtonProps } from "./Button.types";
+
+const StyledButton = styled(motion.button)<Pick<ButtonProps, "justifyContent">>`
   all: unset;
   display: flex;
-  flex: 0 0 70px;
+  flex: 1 0 70px;
   align-items: center;
-  justify-content: stretch;
+  justify-content: ${({
+    justifyContent,
+  }): Pick<ButtonProps, "justifyContent">["justifyContent"] =>
+    justifyContent ?? "stretch"};
   gap: 20px;
   padding: 0 20px;
   background-color: ${({ theme: { fillRest } }): string => fillRest};

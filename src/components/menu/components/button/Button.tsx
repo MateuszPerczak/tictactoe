@@ -12,7 +12,14 @@ const Button = ({
   ...rest
 }: ButtonProps): JSX.Element => {
   return (
-    <StyledButton type="button" layout {...rest}>
+    <StyledButton
+      type="button"
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ type: "tween", delay: 0.2, duration: 0.2 }}
+      {...rest}
+    >
       <Icon icon={icon} bold={bold} size={size ?? 30} />
       <div className="button-content">
         <p className="button-label">{label}</p>

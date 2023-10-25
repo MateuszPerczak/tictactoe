@@ -6,4 +6,9 @@ export type MenuState = {
 export type SetPage = (page: string) => void;
 export type GoBack = () => void;
 
-export type MenuPages = (setPage: SetPage, goBack: GoBack, page: string) => JSX.Element;
+export type PagesProps = {
+  setPage: SetPage;
+  goBack: GoBack;
+};
+
+export type MenuPages = (pagesProps: PagesProps, page: string) => JSX.Element;

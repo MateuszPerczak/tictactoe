@@ -1,4 +1,4 @@
-import type { MouseEventHandler } from "react";
+import type { CSSProperties, MouseEventHandler } from "react";
 
 import type { IconProps } from "../../../icon/Icon.types";
 
@@ -7,4 +7,5 @@ export type ButtonProps = {
   description?: string;
   disabled?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  justifyContent?: CSSProperties["justifyContent"];
 } & IconProps;
