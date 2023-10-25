@@ -9,6 +9,7 @@ const StyledLogo = styled(motion.p)`
   font-weight: bold;
   line-height: 1.2;
   padding: 20px 0;
+  will-change: transform;
 `;
 
 export default StyledLogo;

@@ -10,6 +10,7 @@ const StyledMenuLabel = styled(motion.section)`
   padding: 20px;
   gap: 10px;
   overflow: hidden;
+  will-change: transform;
   .menu-label {
     font-size: 1.4rem;
     font-weight: bold;

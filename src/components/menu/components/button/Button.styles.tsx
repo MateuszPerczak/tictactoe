@@ -16,6 +16,7 @@ const StyledButton = styled(motion.button)`
   font-family: inherit;
   text-decoration: none;
   transition: background-color 200ms, border-color 200ms, color 200ms;
+  will-change: transform;
   &:disabled {
     color: ${({ theme: { textDisabled } }): string => textDisabled};
     background-color: ${({ theme: { fillDisabled } }): string => fillDisabled};

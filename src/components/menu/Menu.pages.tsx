@@ -1,3 +1,4 @@
+import Game from "@components/game/Game";
 import { Icons } from "@components/icon/Icon.types";
 
 import Button from "./components/button/Button";
@@ -60,6 +61,12 @@ export const menuPages: MenuPages = (setPage, goBack, page) => {
         an unknown printer took a galley of type and scrambled it to make a type specimen
         book."
           />
+          <Button icon={Icons.Back} label="Go back" onClick={goBack} />
+        </>
+      ),
+      main: (
+        <>
+          <Game />
           <Button icon={Icons.Back} label="Go back" onClick={goBack} />
         </>
       ),
