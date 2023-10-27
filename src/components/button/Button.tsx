@@ -14,10 +14,12 @@ const Button = ({
   return (
     <StyledButton type="button" layout {...rest}>
       <Icon icon={icon} bold={bold} size={size ?? 30} />
-      <div className="button-content">
-        <p className="button-label">{label}</p>
-        {description && <span className="button-description">{description}</span>}
-      </div>
+      {label && (
+        <div className="button-content">
+          {label && <p className="button-label">{label}</p>}
+          {description && <span className="button-description">{description}</span>}
+        </div>
+      )}
     </StyledButton>
   );
 };
