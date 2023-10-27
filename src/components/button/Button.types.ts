@@ -1,6 +1,7 @@
+import type { MotionProps } from "framer-motion";
 import type { CSSProperties, MouseEventHandler } from "react";
 
-import type { IconProps } from "../../../icon/Icon.types";
+import type { IconProps } from "../icon/Icon.types";
 
 export type ButtonProps = {
   label: string;
@@ -8,4 +9,5 @@ export type ButtonProps = {
   disabled?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   justifyContent?: CSSProperties["justifyContent"];
-} & IconProps;
+} & IconProps &
+  MotionProps;

@@ -1,14 +1,21 @@
+import type { Variants } from "framer-motion";
+
 import StyledGame from "./Game.styles";
 
 const Game = (): JSX.Element => {
-  return (
-    <StyledGame
-      layout
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ type: "tween", delay: 0.2, duration: 0.2 }}
-    ></StyledGame>
-  );
+  const animationVariant: Variants = {
+    initial: {
+      opacity: 0,
+      scale: 0.9,
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: { type: "tween", duration: 0.2, ease: "easeOut" },
+    },
+  };
+
+  return <StyledGame layout variants={animationVariant}></StyledGame>;
 };
 
 export default Game;

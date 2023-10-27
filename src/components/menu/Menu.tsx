@@ -1,6 +1,5 @@
 import Logo from "@components/logo/Logo";
 import { AnimatePresence } from "framer-motion";
-import { LayoutGroup } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 
 import { menuPages } from "./Menu.pages";
@@ -37,9 +36,9 @@ const Menu = (): JSX.Element => {
 
   return (
     <AnimatePresence>
-      <StyledMenu layout>
+      <StyledMenu layout transition={{ type: "tween", duration: 0.2 }}>
         <Logo />
-        <LayoutGroup>{page}</LayoutGroup>
+        {page}
       </StyledMenu>
     </AnimatePresence>
   );

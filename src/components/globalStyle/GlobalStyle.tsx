@@ -21,6 +21,7 @@ const GlobalStyle: FC = (): JSX.Element => {
         body {
           height: 100%;
           scroll-behavior: smooth;
+          overflow: hidden;
         }
         body {
           display: flex;
