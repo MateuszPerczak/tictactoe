@@ -15,12 +15,12 @@ const AppContent = (): JSX.Element => {
     <>
       <GlobalStyle />
       <main>
-        <Panel layout transition={{ type: "tween", duration: 0.2 }}>
-          <Logo />
-          <AnimatePresence>
+        <AnimatePresence>
+          <Panel layout transition={{ type: "tween", duration: 0.2 }}>
+            <Logo />
             <PageRenderer<Pages> {...navigation} pages={pages} />
-          </AnimatePresence>
-        </Panel>
+          </Panel>
+        </AnimatePresence>
       </main>
       <Footer />
     </>
