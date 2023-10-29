@@ -1,11 +1,9 @@
 import { css, Global, type Theme, useTheme } from "@emotion/react";
-import useParallax from "@hooks/useParallax/useParallax";
 import type { FC } from "react";
 import { memo } from "react";
 
 const GlobalStyle: FC = (): JSX.Element => {
   const { background, textPrimary }: Theme = useTheme();
-  useParallax();
   return (
     <Global
       styles={css`

@@ -15,7 +15,11 @@ const Game = (): JSX.Element => {
     },
   };
 
-  return <StyledGame layout variants={animationVariant}></StyledGame>;
+  return (
+    <StyledGame layout variants={animationVariant}>
+      TEST
+    </StyledGame>
+  );
 };
 
 export default Game;

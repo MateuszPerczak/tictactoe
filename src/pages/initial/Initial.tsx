@@ -1,11 +1,12 @@
 import Button from "@components/button/Button";
 import { Icons } from "@components/icon/Icon.types";
-import type { PagesProps } from "@components/menu/Menu.types";
 import Page from "@components/page/Page";
+import type { RenderProps } from "@components/pageRenderer/PageRenderer.types";
 import type { Variants } from "framer-motion";
-import { memo } from "react";
 
-const Initial = ({ setPage }: PagesProps): JSX.Element => {
+import type { Pages } from "../pages";
+
+const Initial = ({ navigateTo }: RenderProps<Pages>): JSX.Element => {
   const animationVariant: Variants = {
     initial: {
       opacity: 0,
@@ -24,18 +25,18 @@ const Initial = ({ setPage }: PagesProps): JSX.Element => {
         icon={Icons.Play}
         label="Play"
         description="Let's goooooo."
-        onClick={(): void => setPage("play")}
+        onClick={(): void => navigateTo("play")}
         variants={animationVariant}
       />
       <Button
         icon={Icons.Info}
         label="About"
         description="Learn more about this project!"
-        onClick={(): void => setPage("about")}
+        onClick={(): void => navigateTo("about")}
         variants={animationVariant}
       />
     </Page>
   );
 };
 
-export default memo(Initial);
+export default Initial;

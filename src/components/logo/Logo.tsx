@@ -8,8 +8,7 @@ const Logo = (): JSX.Element => {
   return (
     <StyledLogo
       layoutId="logo"
-      layout
-      style={{ width: 200 }}
+      style={{ width: "200px", padding: 20 }}
       transition={{ type: "tween", duration: 0.2 }}
     >
       <span>

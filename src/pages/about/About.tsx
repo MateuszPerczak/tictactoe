@@ -1,12 +1,13 @@
 import Button from "@components/button/Button";
 import { Icons } from "@components/icon/Icon.types";
 import Label from "@components/label/Label";
-import type { PagesProps } from "@components/menu/Menu.types";
 import Page from "@components/page/Page";
+import type { RenderProps } from "@components/pageRenderer/PageRenderer.types";
 import type { Variants } from "framer-motion";
-import { memo } from "react";
 
-const About = ({ goBack }: PagesProps): JSX.Element => {
+import type { Pages } from "../pages";
+
+const About = ({ goBack }: RenderProps<Pages>): JSX.Element => {
   const animationVariant: Variants = {
     initial: {
       opacity: 0,
@@ -39,4 +40,4 @@ const About = ({ goBack }: PagesProps): JSX.Element => {
   );
 };
 
-export default memo(About);
+export default About;

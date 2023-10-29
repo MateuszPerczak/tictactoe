@@ -1,5 +1,3 @@
-import { memo } from "react";
-
 import { pageAnimations } from "./Page.animations";
 import StyledPage from "./Page.styles";
 import type { PageProps } from "./Page.types";
@@ -19,4 +17,4 @@ const Page = ({ children, width, ...rest }: PageProps): JSX.Element => {
   );
 };
 
-export default memo(Page);
+export default Page;

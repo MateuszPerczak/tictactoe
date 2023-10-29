@@ -1,12 +1,13 @@
 import Button from "@components/button/Button";
 import Game from "@components/game/Game";
 import { Icons } from "@components/icon/Icon.types";
-import type { PagesProps } from "@components/menu/Menu.types";
 import Page from "@components/page/Page";
+import type { RenderProps } from "@components/pageRenderer/PageRenderer.types";
 import type { Variants } from "framer-motion";
-import { memo } from "react";
 
-const Main = ({ goBack }: PagesProps): JSX.Element => {
+import type { Pages } from "../pages";
+
+const Main = ({ goBack }: RenderProps<Pages>): JSX.Element => {
   const animationVariant: Variants = {
     initial: {
       opacity: 0,
@@ -20,7 +21,7 @@ const Main = ({ goBack }: PagesProps): JSX.Element => {
   };
 
   return (
-    <Page>
+    <Page width={800}>
       <Game />
       <div
         style={{
@@ -53,4 +54,4 @@ const Main = ({ goBack }: PagesProps): JSX.Element => {
   );
 };
 
-export default memo(Main);
+export default Main;

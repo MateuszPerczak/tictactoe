@@ -6,6 +6,7 @@ const StyledGame = styled(motion.div)`
   height: 400px;
   background-color: ${({ theme: { fillRest } }): string => fillRest};
   border-radius: 10px;
+  padding: 20px;
 `;
 
 export default StyledGame;

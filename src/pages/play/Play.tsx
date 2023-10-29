@@ -1,11 +1,12 @@
 import Button from "@components/button/Button";
 import { Icons } from "@components/icon/Icon.types";
-import type { PagesProps } from "@components/menu/Menu.types";
 import Page from "@components/page/Page";
+import type { RenderProps } from "@components/pageRenderer/PageRenderer.types";
 import type { Variants } from "framer-motion";
-import { memo } from "react";
 
-const Play = ({ goBack, setPage }: PagesProps): JSX.Element => {
+import type { Pages } from "../pages";
+
+const Play = ({ goBack, navigateTo }: RenderProps<Pages>): JSX.Element => {
   const animationVariant: Variants = {
     initial: {
       opacity: 0,
@@ -24,14 +25,14 @@ const Play = ({ goBack, setPage }: PagesProps): JSX.Element => {
         icon={Icons.People}
         label="Play with friend"
         description="If u got one."
-        onClick={(): void => setPage("main")}
+        onClick={(): void => navigateTo("main")}
         variants={animationVariant}
       />
       <Button
         icon={Icons.Robot}
         label="Play with AI"
         description="Actually it's just min max algorithm."
-        onClick={(): void => setPage("main")}
+        onClick={(): void => navigateTo("main")}
         variants={animationVariant}
       />
       <Button
@@ -52,4 +53,4 @@ const Play = ({ goBack, setPage }: PagesProps): JSX.Element => {
   );
 };
 
-export default memo(Play);
+export default Play;
