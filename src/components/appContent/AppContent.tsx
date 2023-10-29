@@ -15,7 +15,7 @@ const AppContent = (): JSX.Element => {
     <>
       <GlobalStyle />
       <main>
-        <AnimatePresence>
+        <AnimatePresence initial={false}>
           <Panel layout transition={{ type: "tween", duration: 0.2 }}>
             <Logo />
             <PageRenderer<Pages> {...navigation} pages={pages} />

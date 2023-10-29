@@ -6,7 +6,7 @@ const Game = (): JSX.Element => {
   const animationVariant: Variants = {
     initial: {
       opacity: 0,
-      scale: 0.9,
+      scale: 0.95,
     },
     animate: {
       opacity: 1,
@@ -15,11 +15,7 @@ const Game = (): JSX.Element => {
     },
   };
 
-  return (
-    <StyledGame layout variants={animationVariant}>
-      TEST
-    </StyledGame>
-  );
+  return <StyledGame layout variants={animationVariant}></StyledGame>;
 };
 
 export default Game;
