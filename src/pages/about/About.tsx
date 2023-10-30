@@ -24,10 +24,9 @@ const About = ({ goBack }: RenderProps<Pages>): JSX.Element => {
     <Page width={400}>
       <Label
         label="About"
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-        Ipsum has been the industry's standard dummy text ever since the 1500s, when
-        an unknown printer took a galley of type and scrambled it to make a type specimen
-        book."
+        description={`In brief, this is a second version of TicTacToe. It comes with a lots of improvements under the hood.
+          Mainly react-spring was replaced with framer-motion, and now the whole project uses Vite.
+          I spend lots of time tweaking and making the animations smooth and beautiful.`}
         variants={animationVariant}
       />
       <Button
