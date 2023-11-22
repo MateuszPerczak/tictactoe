@@ -24,9 +24,14 @@ const About = ({ goBack }: RenderProps<Pages>): JSX.Element => {
     <Page width={400}>
       <Label
         label="About"
-        description={`In brief, this is a second version of TicTacToe. It comes with a lots of improvements under the hood.
-          Mainly react-spring was replaced with framer-motion, and now the whole project uses Vite.
-          I spend lots of time tweaking and making the animations smooth and beautiful.`}
+        description="In brief, this is a second version of TicTacToe. It comes with a lots of improvements under the hood.
+        Mainly react-spring was replaced with framer-motion, and now the whole project uses Vite.
+        I spend lots of time tweaking and making the animations smooth and beautiful."
+        variants={animationVariant}
+      />
+      <Label
+        label="Libraries"
+        description="Vite, React, Framer-motion, Emotion"
         variants={animationVariant}
       />
       <Button
