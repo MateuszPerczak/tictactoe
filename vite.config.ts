@@ -10,6 +10,7 @@ export default defineConfig({
     alias: {
       "@components": resolve(__dirname, "./src/components"),
       "@hooks": resolve(__dirname, "./src/hooks"),
+      "@helpers": resolve(__dirname, "./src/helpers"),
     },
   },
   build: {

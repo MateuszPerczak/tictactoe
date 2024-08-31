@@ -8,7 +8,7 @@ const useNavigation = <P extends string>(initialPage: P): UseNavigation<P> => {
     pageHistory: [initialPage],
   });
 
-  const navigateTo = <K extends P>(page: K): void => {
+  const navigateTo = (page: P): void => {
     if (page === currentPage) return;
     setState((prevState) => ({
       currentPage: page,

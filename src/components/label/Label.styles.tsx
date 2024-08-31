@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const StyledLabel = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   padding: 20px;
   overflow: hidden;
   border-radius: 10px;

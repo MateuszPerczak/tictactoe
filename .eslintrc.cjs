@@ -29,12 +29,15 @@ module.exports = {
     "simple-import-sort/exports": "error",
     "@emotion/pkg-renaming": "error",
     "@emotion/import-from-emotion": "error",
-    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/consistent-type-exports": [
       "error",
       { fixMixedExportsWithInlineTypeSpecifier: true },
     ],
-    "@typescript-eslint/consistent-type-imports": ["error", { fixStyle: "inline-type-imports" }],
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      { fixStyle: "inline-type-imports" },
+    ],
     "@typescript-eslint/no-import-type-side-effects": "error",
     eqeqeq: "error",
   },

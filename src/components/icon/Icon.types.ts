@@ -40,4 +40,5 @@ export enum Icons {
   Robot = "\uE99A",
   People = "\uE125",
   Pointer = "\uE3B3",
+  User = "\uE77B",
 }

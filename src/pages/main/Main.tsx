@@ -3,11 +3,15 @@ import Game from "@components/game/Game";
 import { Icons } from "@components/icon/Icon.types";
 import Page from "@components/page/Page";
 import type { RenderProps } from "@components/pageRenderer/PageRenderer.types";
+import useGame from "@hooks/useGame/useGame";
 import type { Variants } from "framer-motion";
 
 import type { Pages } from "../pages";
+import Player from "@components/player/Player";
 
 const Main = ({ goBack }: RenderProps<Pages>): JSX.Element => {
+  const { board, game, currentPlayer } = useGame();
+
   const animationVariant: Variants = {
     initial: {
       opacity: 0,
@@ -22,7 +26,8 @@ const Main = ({ goBack }: RenderProps<Pages>): JSX.Element => {
 
   return (
     <Page width={800}>
-      <Game />
+      <Player player="x" />
+      <Game {...board} />
       <div
         style={{
           display: "grid",
@@ -42,6 +47,7 @@ const Main = ({ goBack }: RenderProps<Pages>): JSX.Element => {
           label="Restart"
           justifyContent="center"
           variants={animationVariant}
+          onClick={game.reset}
         />
         <Button
           icon={Icons.Color}

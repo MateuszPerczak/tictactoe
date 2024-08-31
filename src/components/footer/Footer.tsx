@@ -3,7 +3,7 @@ import { Fragment, memo } from "react";
 import StyledFooter from "./Footer.styles";
 
 const Footer = (): JSX.Element => {
-  const description = ["v2.0.0", "GPL-3.0", "2022 - 2023", "© Mateusz Perczak"];
+  const description = ["v2.0.0", "GPL-3.0", "2022 - 2024", "© Mateusz Perczak"];
 
   return (
     <StyledFooter>

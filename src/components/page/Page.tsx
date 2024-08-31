@@ -8,8 +8,8 @@ const Page = ({ children, width, ...rest }: PageProps): JSX.Element => {
       variants={pageAnimations}
       initial="initial"
       animate="animate"
-      style={{ width }}
       exit="exit"
+      style={{ width }}
       {...rest}
     >
       {children}
