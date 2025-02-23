@@ -11,7 +11,7 @@ const StyledButton = styled(motion.button)<Pick<ButtonProps, "justifyContent">>`
   justify-content: ${({
     justifyContent,
   }): Pick<ButtonProps, "justifyContent">["justifyContent"] =>
-    justifyContent ?? "stretch"};
+    justifyContent ?? "flex-start"};
   gap: 20px;
   padding: 0 20px;
   background-color: ${({ theme: { fillRest } }): string => fillRest};

@@ -1,9 +1,12 @@
-import { Fragment, memo } from "react";
+import { Fragment, memo, useMemo } from "react";
 
 import StyledFooter from "./Footer.styles";
 
 const Footer = (): JSX.Element => {
-  const description = ["v2.0.0", "GPL-3.0", "2022 - 2024", "© Mateusz Perczak"];
+  const description = useMemo<string[]>(() => {
+    const year = new Date().getFullYear();
+    return ["v2.0.0", "GPL-3.0", year.toString(), "© Mateusz Perczak"];
+  }, []);
 
   return (
     <StyledFooter>
