@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.11.0",
     "framer-motion": "^7.10.3",
     "react": "^18.2.0",
