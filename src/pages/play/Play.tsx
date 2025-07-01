@@ -12,28 +12,21 @@ const Play = ({ goBack, navigateTo }: RenderProps<Pages>): JSX.Element => {
       <Button
         icon={Icons.User}
         label="Play with friend"
-        description="If u got one."
+        description="If u got one"
         onClick={(): void => navigateTo("main")}
         variants={playAnimationVariant}
       />
       <Button
         icon={Icons.Robot}
         label="Play with computer"
-        description="Actually it's just min max algorithm."
-        disabled
-        variants={playAnimationVariant}
-      />
-      <Button
-        icon={Icons.Play}
-        label="Play with others"
-        description="Coming soon."
+        description="Actually it's just min max algorithm"
         disabled
         variants={playAnimationVariant}
       />
       <Button
         icon={Icons.Back}
         label="Go back"
-        description="Nah bro let's go back."
+        description="Nah bro let's go back"
         onClick={goBack}
         variants={playAnimationVariant}
       />

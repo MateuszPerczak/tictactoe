@@ -6,7 +6,7 @@ import type { GameProps } from "./Game.types";
 import Icon from "@components/icon/Icon";
 import { Icons } from "@components/icon/Icon.types";
 
-const StyledBoard = styled.div`
+const StyledBoard = styled(motion.div)`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -29,7 +29,7 @@ const StyledBoard = styled.div`
   }
 `;
 
-const Game = ({ setBoard, state }: GameProps): JSX.Element => {
+const Game = ({ gameState, gameApi }: GameProps): JSX.Element => {
   const animationVariant: Variants = {
     initial: {
       opacity: 0,
@@ -53,13 +53,15 @@ const Game = ({ setBoard, state }: GameProps): JSX.Element => {
     },
   };
 
+  console.log(gameState.board);
+
   return (
     <StyledGame layout variants={animationVariant}>
-      <StyledBoard>
-        {state.map((value, index) => (
+      <StyledBoard variants={boardVariant}>
+        {gameState.board.map((value, index) => (
           <div
             key={`board-tile-${index}`}
-            onClick={() => setBoard(index)}
+            onClick={() => gameApi.onTileClick(index)}
             className="board-square"
           >
             {value === "X" && <Icon icon={Icons.Cross} size={64} />}

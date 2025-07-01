@@ -1,53 +1,79 @@
 import { getUniqueId } from "@helpers/getUniqueId";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
-import type { BoardElement, GameState } from "./useGame.types";
+import type { Board, GameProps, GameState } from "./useGame.types";
 
-const useGame = () => {
+const useGame = (props: GameProps) => {
   const initialState = useMemo(
     (): GameState => ({
-      board: Array(9).fill({} as BoardElement),
+      board: Array.from({ length: 9 }, () => null),
       currentPlayer: "X",
+      mode: props.mode,
     }),
+    [props.mode],
+  );
+
+  const [state, setState] = useState<GameState>(() => initialState);
+
+  const resetGame = useCallback(() => setState(() => initialState), []);
+
+  const insertPlayer = (gameState: GameState, tileIndex: number) => {
+    const board: Board = [...gameState.board];
+    let currentPlayer = gameState.currentPlayer;
+
+    for (let index = 0; index < board.length; index++) {
+      const tile = board.at(index);
+      if (tile === undefined) {
+        continue;
+      }
+      if (tileIndex === index && tile === null) {
+        console.log("pre", currentPlayer);
+        board[index] = currentPlayer;
+        currentPlayer = currentPlayer === "O" ? "X" : "O";
+        console.log("after", currentPlayer);
+      }
+    }
+
+    return { ...gameState, board, currentPlayer } as const;
+  };
+
+  const onTileClick = useCallback(
+    (tileIndex: number) =>
+      setState((prevState) => {
+        // check if index is within the range
+        if (!(tileIndex <= 8 && tileIndex >= 0)) {
+          return prevState;
+        }
+
+        if (prevState.mode === "withAlgorithm") {
+          return {
+            ...prevState,
+          };
+        }
+
+        if (prevState.mode === "withFriend") {
+          const updatedState = insertPlayer(prevState, tileIndex);
+          console.log("u", updatedState);
+          return updatedState;
+        }
+
+        return {
+          ...prevState,
+        };
+      }),
     [],
   );
 
-  const [state, setState] = useState<GameState>({
-    board: Array(9).fill(null),
-    currentPlayer: "X",
-  });
-
-  const reset = () =>
-    setState({
-      board: Array(9).fill(null),
-      currentPlayer: "X",
-    });
-
-  const setBoard = (index: number) =>
-    setState((prevState) => {
-      let currentPlayer = prevState.currentPlayer;
-      const board = [...prevState.board];
-      if (board[index] === null) {
-        board[index] = currentPlayer;
-        currentPlayer = currentPlayer === "X" ? "O" : "X";
-      }
-      return {
-        ...prevState,
-        board,
-        currentPlayer,
-      };
-    });
-
   return {
-    game: {
-      reset,
+    gameState: {
+      canResetGame: state.board.every((value) => value === null),
+      board: state.board,
     },
-    board: {
-      state: state.board,
-      setBoard,
+    gameApi: {
+      resetGame,
+      onTileClick,
     },
-    currentPlayer: state.currentPlayer,
-  } as const;
+  };
 };
 
 export default useGame;
