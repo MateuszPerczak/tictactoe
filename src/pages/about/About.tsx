@@ -1,5 +1,7 @@
+import { Avatar } from "@components/avatar/Avatar";
 import Button from "@components/button/Button";
 import { Icons } from "@components/icon/Icon.types";
+import { ImageLabel } from "@components/ImageLabel/ImageLabel";
 import Label from "@components/label/Label";
 import Page from "@components/page/Page";
 import type { RenderProps } from "@components/pageRenderer/PageRenderer.types";
@@ -20,6 +22,12 @@ const About = ({ goBack }: RenderProps<Pages>): JSX.Element => {
       <Label
         label="Libraries"
         description="Vite, React, Framer-motion, Emotion"
+        variants={aboutAnimationVariant}
+      />
+      <ImageLabel
+        image={<Avatar url="./images/avatar.png" />}
+        label="Made by"
+        description="SpaceFox 🌌"
         variants={aboutAnimationVariant}
       />
       <Button
