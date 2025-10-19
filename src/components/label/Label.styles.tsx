@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 const StyledLabel = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  gap: 5px;
   padding: 20px;
   overflow: hidden;
   border-radius: 10px;
@@ -27,13 +26,3 @@ const StyledLabel = styled(motion.div)`
 `;
 
 export default StyledLabel;
-
-// display: flex;
-// flex-direction: column;
-// background-color: ${({ theme: { fillRest } }): string => fillRest};
-// border: 1px solid ${({ theme: { strokeRest } }): string => strokeRest};
-// border-radius: 10px;
-// padding: 20px;
-// gap: 10px;
-// overflow: hidden;
-// will-change: transform;

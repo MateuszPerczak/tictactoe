@@ -1,4 +1,5 @@
 import Icon from "@components/icon/Icon";
+import { memo } from "react";
 
 import StyledButton from "./Button.styles";
 import type { ButtonProps } from "./Button.types";
@@ -24,4 +25,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default memo(Button);

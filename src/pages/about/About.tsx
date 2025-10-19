@@ -25,9 +25,9 @@ const About = ({ goBack }: RenderProps<Pages>): JSX.Element => {
         variants={aboutAnimationVariant}
       />
       <ImageLabel
-        image={<Avatar url="./images/avatar.png" />}
+        image={<Avatar url="./images/avatar.jpg" />}
         label="Made by"
-        description="SpaceFox 🌌"
+        description="SpaceFox"
         variants={aboutAnimationVariant}
       />
       <Button
